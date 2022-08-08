@@ -254,99 +254,111 @@ namespace DataProcessingForm
          */
         private void buttonBinSIteA_Click(object sender, EventArgs e)
         {
-            if (SelectionSort(listSensorA))
-            { }
-
-            int minNode = 0;
-            int maxNode = NumberOfNodes(listSensorA);
-            Stopwatch sw = new Stopwatch();
-            sw.Reset();
-            sw.Start();
-            int listIndex = 0;
-            listIndex = BinarySearchIterative(listSensorA, Int32.Parse(textBoxSearchA.Text), minNode, maxNode);
-
-            sw.Stop();
-            textBoxIteTicksA.Text = sw.ElapsedTicks.ToString() + " ticks";
-            DisplayListBoxData(listSensorA, listBoxSensorA);
-            if (listIndex == maxNode)
+            if (validateSensorInput("A", textBoxSearchA, listBoxSensorA, textBoxIteTicksA))
             {
-                listIndex = maxNode - 1;
+                if (SelectionSort(listSensorA))
+                { }
+
+                int minNode = 0;
+                int maxNode = NumberOfNodes(listSensorA);
+                Stopwatch sw = new Stopwatch();
+                sw.Reset();
+                sw.Start();
+                int listIndex = 0;
+                listIndex = BinarySearchIterative(listSensorA, Int32.Parse(textBoxSearchA.Text), minNode, maxNode);
+
+                sw.Stop();
+                textBoxIteTicksA.Text = sw.ElapsedTicks.ToString() + " ticks";
+                DisplayListBoxData(listSensorA, listBoxSensorA);
+                if (listIndex == maxNode)
+                {
+                    listIndex = maxNode - 1;
+                }
+                listBoxSensorA.SelectedIndex = listIndex;
+                listBoxSensorA.TopIndex = listIndex;
+                listBoxSensorA.Focus();
             }
-            listBoxSensorA.SelectedIndex = listIndex;
-            listBoxSensorA.TopIndex = listIndex;
-            listBoxSensorA.Focus();
         }
         private void buttonBinSIteB_Click(object sender, EventArgs e)
         {
-            if (SelectionSort(listSensorB))
-            { }
-
-            int minNode = 0;
-            int maxNode = NumberOfNodes(listSensorB);
-            Stopwatch sw = new Stopwatch();
-            sw.Reset();
-            sw.Start();
-            int listIndex = 0;
-            listIndex = BinarySearchIterative(listSensorB, Int32.Parse(textBoxSearchB.Text), minNode, maxNode);
-
-            sw.Stop();
-            textBoxIteTicksB.Text = sw.ElapsedTicks.ToString() + " ticks";
-            DisplayListBoxData(listSensorB, listBoxSensorB);
-            if (listIndex == maxNode)
+            if (validateSensorInput("B", textBoxSearchB, listBoxSensorB, textBoxIteTicksB))
             {
-                listIndex = maxNode - 1;
+                if (SelectionSort(listSensorB))
+                { }
+
+                int minNode = 0;
+                int maxNode = NumberOfNodes(listSensorB);
+                Stopwatch sw = new Stopwatch();
+                sw.Reset();
+                sw.Start();
+                int listIndex = 0;
+                listIndex = BinarySearchIterative(listSensorB, Int32.Parse(textBoxSearchB.Text), minNode, maxNode);
+
+                sw.Stop();
+                textBoxIteTicksB.Text = sw.ElapsedTicks.ToString() + " ticks";
+                DisplayListBoxData(listSensorB, listBoxSensorB);
+                if (listIndex == maxNode)
+                {
+                    listIndex = maxNode - 1;
+                }
+                listBoxSensorB.SelectedIndex = listIndex;
+                listBoxSensorB.TopIndex = listIndex;
+                listBoxSensorB.Focus();
             }
-            listBoxSensorB.SelectedIndex = listIndex;
-            listBoxSensorB.TopIndex = listIndex;
-            listBoxSensorB.Focus();
         }
         private void buttonBinSRecA_Click(object sender, EventArgs e)
         {
-            if (SelectionSort(listSensorA))
-            { }
-
-            int minNode = 0;
-            int maxNode = NumberOfNodes(listSensorA);
-            Stopwatch sw = new Stopwatch();
-            sw.Reset();
-            sw.Start();
-            int listIndex = 0;
-            listIndex = BinarySearchRecursive(listSensorA, Int32.Parse(textBoxSearchA.Text), minNode, maxNode - 1);
-
-            sw.Stop();
-            textBoxRecTicksA.Text = sw.ElapsedTicks.ToString() + " ticks";
-            DisplayListBoxData(listSensorA, listBoxSensorA);
-            if (listIndex == maxNode)
+            if (validateSensorInput("A", textBoxSearchA, listBoxSensorA, textBoxRecTicksA))
             {
-                listIndex = maxNode - 1;
+                if (SelectionSort(listSensorA))
+                { }
+
+                int minNode = 0;
+                int maxNode = NumberOfNodes(listSensorA);
+                Stopwatch sw = new Stopwatch();
+                sw.Reset();
+                sw.Start();
+                int listIndex = 0;
+                listIndex = BinarySearchRecursive(listSensorA, Int32.Parse(textBoxSearchA.Text), minNode, maxNode - 1);
+
+                sw.Stop();
+                textBoxRecTicksA.Text = sw.ElapsedTicks.ToString() + " ticks";
+                DisplayListBoxData(listSensorA, listBoxSensorA);
+                if (listIndex == maxNode)
+                {
+                    listIndex = maxNode - 1;
+                }
+                listBoxSensorA.SelectedIndex = listIndex;
+                listBoxSensorA.TopIndex = listIndex;
+                listBoxSensorA.Focus();
             }
-            listBoxSensorA.SelectedIndex = listIndex;
-            listBoxSensorA.TopIndex = listIndex;
-            listBoxSensorA.Focus();
         }
         private void buttonBinSRecB_Click(object sender, EventArgs e)
         {
-            if (SelectionSort(listSensorB))
-            { }
-
-            int minNode = 0;
-            int maxNode = NumberOfNodes(listSensorB);
-            Stopwatch sw = new Stopwatch();
-            sw.Reset();
-            sw.Start();
-            int listIndex = 0;
-            listIndex = BinarySearchRecursive(listSensorB, Int32.Parse(textBoxSearchB.Text), minNode, maxNode - 1);
-
-            sw.Stop();
-            textBoxRecTicksB.Text = sw.ElapsedTicks.ToString() + " ticks";
-            DisplayListBoxData(listSensorB, listBoxSensorB);
-            if (listIndex == maxNode)
+            if (validateSensorInput("B", textBoxSearchB, listBoxSensorB, textBoxRecTicksB))
             {
-                listIndex = maxNode - 1;
+                if (SelectionSort(listSensorB))
+                { }
+
+                int minNode = 0;
+                int maxNode = NumberOfNodes(listSensorB);
+                Stopwatch sw = new Stopwatch();
+                sw.Reset();
+                sw.Start();
+                int listIndex = 0;
+                listIndex = BinarySearchRecursive(listSensorB, Int32.Parse(textBoxSearchB.Text), minNode, maxNode - 1);
+
+                sw.Stop();
+                textBoxRecTicksB.Text = sw.ElapsedTicks.ToString() + " ticks";
+                DisplayListBoxData(listSensorB, listBoxSensorB);
+                if (listIndex == maxNode)
+                {
+                    listIndex = maxNode - 1;
+                }
+                listBoxSensorB.SelectedIndex = listIndex;
+                listBoxSensorB.TopIndex = listIndex;
+                listBoxSensorB.Focus();
             }
-            listBoxSensorB.SelectedIndex = listIndex;
-            listBoxSensorB.TopIndex = listIndex;
-            listBoxSensorB.Focus();
         }
 
         /*
@@ -427,6 +439,22 @@ namespace DataProcessingForm
             if (!int.TryParse(textBoxSearchB.Text, out int resultNum))
             {
                 MessageBox.Show("Sensor B search target must be numerics only.");
+            }
+        }
+
+        private bool validateSensorInput(string sensor, TextBox textBoxSearch, ListBox listBoxSensor, TextBox textBoxTicks)
+        {
+            if (!int.TryParse(textBoxSearch.Text, out int resultNum))
+            {
+                listBoxSensor.Items.Clear();
+                listBoxSensor.ClearSelected();
+                textBoxTicks.Clear();
+                MessageBox.Show("Sensor " + sensor + " search target must be numerics only.");
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
         #endregion UI button methods
