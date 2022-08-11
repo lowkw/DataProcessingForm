@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Galileo;
 using System.Diagnostics;
-
+// Low, Kok Wei (M214391)
 namespace DataProcessingForm
 {
     public partial class DataProcessingForm : Form
@@ -257,26 +257,28 @@ namespace DataProcessingForm
             if (validateSensorInput("A", textBoxSearchA, listBoxSensorA, textBoxIteTicksA))
             {
                 if (SelectionSort(listSensorA))
-                { }
-
-                int minNode = 0;
-                int maxNode = NumberOfNodes(listSensorA);
-                Stopwatch sw = new Stopwatch();
-                sw.Reset();
-                sw.Start();
-                int listIndex = 0;
-                listIndex = BinarySearchIterative(listSensorA, Int32.Parse(textBoxSearchA.Text), minNode, maxNode);
-
-                sw.Stop();
-                textBoxIteTicksA.Text = sw.ElapsedTicks.ToString() + " ticks";
-                DisplayListBoxData(listSensorA, listBoxSensorA);
-                if (listIndex == maxNode)
                 {
-                    listIndex = maxNode - 1;
+
+                    int minNode = 0;
+                    int maxNode = NumberOfNodes(listSensorA);
+                    Stopwatch sw = new Stopwatch();
+                    sw.Reset();
+                    sw.Start();
+                    int listIndex = 0;
+                    listIndex = BinarySearchIterative(listSensorA, Int32.Parse(textBoxSearchA.Text), minNode, maxNode);
+
+                    sw.Stop();
+                    textBoxIteTicksA.Text = sw.ElapsedTicks.ToString() + " ticks";
+                    DisplayListBoxData(listSensorA, listBoxSensorA);
+                    if (listIndex == maxNode)
+                    {
+                        listIndex = maxNode - 1;
+                    }
+                    if (listBoxSensorA.Items.Count > 0)
+                    {
+                        HighlightSelectedIndexes(listBoxSensorA, listIndex, 0, maxNode - 1);
+                    }
                 }
-                listBoxSensorA.SelectedIndex = listIndex;
-                listBoxSensorA.TopIndex = listIndex;
-                listBoxSensorA.Focus();
             }
         }
         private void buttonBinSIteB_Click(object sender, EventArgs e)
@@ -284,26 +286,28 @@ namespace DataProcessingForm
             if (validateSensorInput("B", textBoxSearchB, listBoxSensorB, textBoxIteTicksB))
             {
                 if (SelectionSort(listSensorB))
-                { }
-
-                int minNode = 0;
-                int maxNode = NumberOfNodes(listSensorB);
-                Stopwatch sw = new Stopwatch();
-                sw.Reset();
-                sw.Start();
-                int listIndex = 0;
-                listIndex = BinarySearchIterative(listSensorB, Int32.Parse(textBoxSearchB.Text), minNode, maxNode);
-
-                sw.Stop();
-                textBoxIteTicksB.Text = sw.ElapsedTicks.ToString() + " ticks";
-                DisplayListBoxData(listSensorB, listBoxSensorB);
-                if (listIndex == maxNode)
                 {
-                    listIndex = maxNode - 1;
+
+                    int minNode = 0;
+                    int maxNode = NumberOfNodes(listSensorB);
+                    Stopwatch sw = new Stopwatch();
+                    sw.Reset();
+                    sw.Start();
+                    int listIndex = 0;
+                    listIndex = BinarySearchIterative(listSensorB, Int32.Parse(textBoxSearchB.Text), minNode, maxNode);
+
+                    sw.Stop();
+                    textBoxIteTicksB.Text = sw.ElapsedTicks.ToString() + " ticks";
+                    DisplayListBoxData(listSensorB, listBoxSensorB);
+                    if (listIndex == maxNode)
+                    {
+                        listIndex = maxNode - 1;
+                    }
+                    if (listBoxSensorB.Items.Count > 0)
+                    {
+                        HighlightSelectedIndexes(listBoxSensorB, listIndex, 0, maxNode - 1);
+                    }
                 }
-                listBoxSensorB.SelectedIndex = listIndex;
-                listBoxSensorB.TopIndex = listIndex;
-                listBoxSensorB.Focus();
             }
         }
         private void buttonBinSRecA_Click(object sender, EventArgs e)
@@ -311,26 +315,28 @@ namespace DataProcessingForm
             if (validateSensorInput("A", textBoxSearchA, listBoxSensorA, textBoxRecTicksA))
             {
                 if (SelectionSort(listSensorA))
-                { }
-
-                int minNode = 0;
-                int maxNode = NumberOfNodes(listSensorA);
-                Stopwatch sw = new Stopwatch();
-                sw.Reset();
-                sw.Start();
-                int listIndex = 0;
-                listIndex = BinarySearchRecursive(listSensorA, Int32.Parse(textBoxSearchA.Text), minNode, maxNode - 1);
-
-                sw.Stop();
-                textBoxRecTicksA.Text = sw.ElapsedTicks.ToString() + " ticks";
-                DisplayListBoxData(listSensorA, listBoxSensorA);
-                if (listIndex == maxNode)
                 {
-                    listIndex = maxNode - 1;
+
+                    int minNode = 0;
+                    int maxNode = NumberOfNodes(listSensorA);
+                    Stopwatch sw = new Stopwatch();
+                    sw.Reset();
+                    sw.Start();
+                    int listIndex = 0;
+                    listIndex = BinarySearchRecursive(listSensorA, Int32.Parse(textBoxSearchA.Text), minNode, maxNode - 1);
+
+                    sw.Stop();
+                    textBoxRecTicksA.Text = sw.ElapsedTicks.ToString() + " ticks";
+                    DisplayListBoxData(listSensorA, listBoxSensorA);
+                    if (listIndex == maxNode)
+                    {
+                        listIndex = maxNode - 1;
+                    }
+                    if (listBoxSensorA.Items.Count > 0)
+                    {
+                        HighlightSelectedIndexes(listBoxSensorA, listIndex, 0, maxNode - 1);
+                    }
                 }
-                listBoxSensorA.SelectedIndex = listIndex;
-                listBoxSensorA.TopIndex = listIndex;
-                listBoxSensorA.Focus();
             }
         }
         private void buttonBinSRecB_Click(object sender, EventArgs e)
@@ -338,27 +344,58 @@ namespace DataProcessingForm
             if (validateSensorInput("B", textBoxSearchB, listBoxSensorB, textBoxRecTicksB))
             {
                 if (SelectionSort(listSensorB))
-                { }
-
-                int minNode = 0;
-                int maxNode = NumberOfNodes(listSensorB);
-                Stopwatch sw = new Stopwatch();
-                sw.Reset();
-                sw.Start();
-                int listIndex = 0;
-                listIndex = BinarySearchRecursive(listSensorB, Int32.Parse(textBoxSearchB.Text), minNode, maxNode - 1);
-
-                sw.Stop();
-                textBoxRecTicksB.Text = sw.ElapsedTicks.ToString() + " ticks";
-                DisplayListBoxData(listSensorB, listBoxSensorB);
-                if (listIndex == maxNode)
                 {
-                    listIndex = maxNode - 1;
+                    int minNode = 0;
+                    int maxNode = NumberOfNodes(listSensorB);
+                    Stopwatch sw = new Stopwatch();
+                    sw.Reset();
+                    sw.Start();
+                    int listIndex = 0;
+                    listIndex = BinarySearchRecursive(listSensorB, Int32.Parse(textBoxSearchB.Text), minNode, maxNode - 1);
+
+                    sw.Stop();
+                    textBoxRecTicksB.Text = sw.ElapsedTicks.ToString() + " ticks";
+                    DisplayListBoxData(listSensorB, listBoxSensorB);
+                    if (listIndex == maxNode)
+                    {
+                        listIndex = maxNode - 1;
+                    }
+                    if (listBoxSensorB.Items.Count > 0)
+                    {
+                        HighlightSelectedIndexes(listBoxSensorB, listIndex, 0, maxNode - 1);
+                    }
                 }
-                listBoxSensorB.SelectedIndex = listIndex;
-                listBoxSensorB.TopIndex = listIndex;
-                listBoxSensorB.Focus();
             }
+        }
+
+        private void HighlightSelectedIndexes(ListBox listBoxSensor, int listIndex, int first, int last)
+        {
+            int i, j, range;
+            range = 2;
+            i = listIndex - range;
+            listBoxSensor.TopIndex = i;
+            j = listIndex + range;
+
+            if ((listIndex == first) || (listIndex == first + 1))
+            {
+                listBoxSensor.TopIndex = first;
+                i = first;
+                j = first + (2 * range);
+            }
+
+            if ((listIndex == last) || (listIndex == last - 1))
+            {
+                listBoxSensor.TopIndex = last - (2 * range);
+                i = last - (2 * range);
+                j = last;
+            }
+
+            while (i <= j)
+            {
+                listBoxSensor.SelectedIndex = i;
+                i++;
+            }
+            listBoxSensor.Focus();
         }
 
         /*
